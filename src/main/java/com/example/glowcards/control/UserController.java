@@ -18,6 +18,5 @@ public class UserController {
 
     public void addUser(User user){
         userArrayList.add(user);
-        System.out.println("**Added new user**");
     }
 }

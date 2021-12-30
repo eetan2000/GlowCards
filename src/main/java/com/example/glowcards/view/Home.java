@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -26,36 +27,36 @@ public class Home {
     private Button quizButton;
 
     @FXML
+    private Label usernameLabel;
+
+    @FXML
     private VBox menuVbox;
     @FXML
     private AnchorPane mainAnchorPane;
 
+    private String username;
+
     public void display(){
-        System.out.println("Here");
+        usernameLabel.setText(username);
     }
 
     public void homeSideButton(ActionEvent event) throws IOException {
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Text text = new Text();
-        text.setText("Sets");
-        text.setX(400);
-        text.setY(100);
 
-        mainAnchorPane.getChildren().add(text);
-        stage.show();
     }
 
     public void createSideButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Create.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Create.fxml"));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
+        stage.setScene(scene);
         stage.show();
     }
 
     public void setsSideButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Sets.fxml"));
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.show();
+
+    }
+
+    public void setUsername(String username){
+        this.username = username;
     }
 }

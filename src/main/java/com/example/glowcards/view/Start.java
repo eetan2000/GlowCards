@@ -37,6 +37,7 @@ public class Start {
         root = loader.load();
 
         Home homeController = loader.getController();
+        homeController.setUsername(username);
         homeController.display();
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
