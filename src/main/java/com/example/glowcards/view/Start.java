@@ -3,7 +3,6 @@ package com.example.glowcards.view;
 import com.example.glowcards.control.User;
 import com.example.glowcards.control.UserController;
 import com.example.glowcards.control.UserFactory;
-import com.example.glowcards.view.Home;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,8 +32,9 @@ public class Start {
         User newUser = UserFactory.getINSTANCE().createUser(username,password);
         UserController.getINSTANCE().addUser(newUser);
 
-        URL fxmlLocation = getClass().getResource("Home.fxml");
+        URL fxmlLocation = getClass().getResource("/fxml/Home.fxml");
         FXMLLoader loader = new FXMLLoader(fxmlLocation);
+        root = loader.load();
 
         Home homeController = loader.getController();
         homeController.display();
