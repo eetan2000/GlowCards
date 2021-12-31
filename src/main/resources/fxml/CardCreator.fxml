@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="cardPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="740.0" style="-fx-background-color: #07375b;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.glowcards.view.CardCreator">
+   <children>
+      <Label fx:id="numberLabel" layoutX="14.0" layoutY="14.0" text="#" textFill="#fdfdfd" />
+      <Label fx:id="termLabel" layoutX="14.0" layoutY="31.0" prefHeight="26.0" prefWidth="281.0" text="Term:" textFill="WHITE" />
+      <Label fx:id="definitionLabel" layoutX="342.0" layoutY="36.0" prefHeight="17.0" prefWidth="387.0" text="Definition:" textFill="WHITE" />
+      <TextField fx:id="termTextField" layoutX="18.0" layoutY="57.0" prefHeight="128.0" prefWidth="281.0" />
+      <TextField fx:id="definitionTextField" layoutX="342.0" layoutY="57.0" prefHeight="128.0" prefWidth="387.0" />
+   </children>
+</Pane>

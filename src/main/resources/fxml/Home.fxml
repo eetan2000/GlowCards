@@ -17,15 +17,15 @@
                   <Font name="Cambria" size="18.0" />
                </font>
             </Label>
-            <Button fx:id="homeButton" mnemonicParsing="false" onAction="#homeSideButton" prefHeight="50.0" prefWidth="220.0" text="Home" translateY="80.0">
+            <Button fx:id="homeButton" focusTraversable="false" mnemonicParsing="false" onAction="#homeSideButton" prefHeight="50.0" prefWidth="220.0" text="Home" translateY="80.0">
                <font>
-                  <Font name="Georgia" size="12.0" />
+                  <Font name="Georgia Bold" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="createButton" mnemonicParsing="false" onAction="#createSideButton" prefHeight="50.0" prefWidth="220.0" text="Create" translateY="80.0" />
-            <Button fx:id="setsButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Sets" translateY="80.0" />
-            <Button fx:id="quizButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Quiz" translateY="80.0" />
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Settings" translateY="155.0" />
+            <Button fx:id="createButton" focusTraversable="false" mnemonicParsing="false" onAction="#createSideButton" prefHeight="50.0" prefWidth="220.0" text="Create" translateY="80.0" />
+            <Button fx:id="setsButton" focusTraversable="false" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Sets" translateY="80.0" />
+            <Button fx:id="quizButton" focusTraversable="false" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Quiz" translateY="80.0" />
+            <Button focusTraversable="false" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Settings" translateY="155.0" />
          </children>
       </VBox>
    </children>

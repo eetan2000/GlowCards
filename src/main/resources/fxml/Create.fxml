@@ -5,10 +5,11 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.glowcards.view.Create">
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.glowcards.view.Create">
    <children>
       <VBox prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #b3d1b3;">
          <children>
@@ -18,16 +19,33 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="homeButton" mnemonicParsing="false" onAction="#homeSideButton" prefHeight="50.0" prefWidth="220.0" text="Home" translateY="80.0" />
-            <Button fx:id="createButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Create" translateY="80.0" />
-            <Button fx:id="setsButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Sets" translateY="80.0" />
-            <Button fx:id="quizButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Quiz" translateY="80.0" />
-            <Button fx:id="settingsButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Settings" translateY="155.0" />
+            <Button fx:id="homeButton" focusTraversable="false" mnemonicParsing="false" onAction="#homeSideButton" prefHeight="50.0" prefWidth="220.0" text="Home" translateY="80.0" />
+            <Button fx:id="createButton" focusTraversable="false" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Create" translateY="80.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="setsButton" focusTraversable="false" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Sets" translateY="80.0" />
+            <Button fx:id="quizButton" focusTraversable="false" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Quiz" translateY="80.0" />
+            <Button fx:id="settingsButton" focusTraversable="false" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Settings" translateY="155.0" />
          </children>
       </VBox>
-      <ScrollPane fx:id="mainScrollPane" layoutX="220.0" prefHeight="600.0" prefWidth="780.0" vbarPolicy="ALWAYS">
+      <Pane fx:id="bottomPane" layoutX="220.0" layoutY="481.0" prefHeight="119.0" prefWidth="780.0" style="-fx-background-color: #ce593d;">
+         <children>
+            <Button fx:id="addCardButton" layoutX="50.0" layoutY="29.0" mnemonicParsing="false" onAction="#addCard" prefHeight="62.0" prefWidth="242.0" text="ADD CARD">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="510.0" layoutY="29.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="220.0" text="CREATE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <ScrollPane fx:id="scrollPane" fitToHeight="true" hbarPolicy="ALWAYS" layoutX="220.0" minHeight="481.0" minWidth="780.0" vbarPolicy="ALWAYS">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+          <AnchorPane fx:id="componentAnchorPane" minHeight="481.0" minWidth="780.0" />
         </content>
       </ScrollPane>
    </children>
