@@ -32,7 +32,7 @@ public class Create {
     private int SPACING_BETWEEN_CARDS = 0;
 
     public void setUp(){
-        scrollPane.setPannable(true);
+
     }
 
     public void homeSideButton(ActionEvent event) throws IOException {
@@ -44,13 +44,12 @@ public class Create {
     }
 
     public void addCard(ActionEvent event) throws IOException {
-
-
         CardCreator newCard = new CardCreator();
         newCard.setTranslateX(14);
         newCard.setTranslateY(127 + SPACING_BETWEEN_CARDS);
-        SPACING_BETWEEN_CARDS += 254;
 
+        componentAnchorPane.setPrefHeight(480 + SPACING_BETWEEN_CARDS);
+        SPACING_BETWEEN_CARDS += 254;
         componentAnchorPane.getChildren().add(newCard);
     }
 }

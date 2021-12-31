@@ -43,9 +43,9 @@
             </Button>
          </children>
       </Pane>
-      <ScrollPane fx:id="scrollPane" fitToHeight="true" hbarPolicy="ALWAYS" layoutX="220.0" minHeight="481.0" minWidth="780.0" vbarPolicy="ALWAYS">
+      <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="220.0" prefHeight="480.0" prefWidth="780.0">
         <content>
-          <AnchorPane fx:id="componentAnchorPane" minHeight="481.0" minWidth="780.0" />
+          <AnchorPane fx:id="componentAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="780.0" />
         </content>
       </ScrollPane>
    </children>
