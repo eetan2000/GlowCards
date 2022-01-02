@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -45,7 +46,16 @@
       </Pane>
       <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="220.0" prefHeight="480.0" prefWidth="780.0">
         <content>
-          <AnchorPane fx:id="componentAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="780.0" />
+          <AnchorPane fx:id="componentAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="780.0">
+               <children>
+                  <Label fx:id="titleLabel" layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="170.0" text="Title:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="titleTextField" layoutX="14.0" layoutY="44.0" prefHeight="30.0" prefWidth="509.0" promptText="..." />
+               </children>
+            </AnchorPane>
         </content>
       </ScrollPane>
    </children>

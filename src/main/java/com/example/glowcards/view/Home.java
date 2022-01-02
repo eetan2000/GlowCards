@@ -37,7 +37,7 @@ public class Home {
 
     private String username;
 
-    public void display(){
+    public void display() {
         usernameLabel.setText(username);
     }
 
@@ -53,23 +53,17 @@ public class Home {
         Create createController = loader.getController();
         createController.setUp();
 
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
-        /*Parent root = FXMLLoader.load(getClass().getResource("/fxml/Create.fxml"));
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();*/
     }
 
     public void setsSideButton(ActionEvent event) throws IOException {
 
     }
 
-    public void setUsername(String username){
+    public void setUsername(String username) {
         this.username = username;
     }
 }

@@ -29,7 +29,7 @@ public class Start {
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
 
-        User newUser = UserFactory.getINSTANCE().createUser(username,password);
+        User newUser = UserFactory.getINSTANCE().createUser(username, password);
         UserController.getINSTANCE().addUser(newUser);
 
         URL fxmlLocation = getClass().getResource("/fxml/Home.fxml");
@@ -40,7 +40,7 @@ public class Start {
         homeController.setUsername(username);
         homeController.display();
 
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

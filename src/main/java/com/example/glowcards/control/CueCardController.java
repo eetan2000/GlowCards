@@ -7,8 +7,8 @@ import java.util.ArrayList;
 public class CueCardController {
     private ArrayList<CueCard> cueCardArrayList = new ArrayList<>();
 
-    public void addCard(String term, String definition){
-        CueCard newCard = CueCardFactory.getINSTANCE().createCueCard(term,definition);
+    public void addCard(String term, String definition) {
+        CueCard newCard = CueCardFactory.getINSTANCE().createCueCard(term, definition);
         cueCardArrayList.add(newCard);
     }
 }

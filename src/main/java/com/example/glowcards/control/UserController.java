@@ -7,16 +7,17 @@ public class UserController {
 
     private static UserController INSTANCE;
 
-    private UserController(){}
+    private UserController() {
+    }
 
-    public static UserController getINSTANCE(){
-        if (INSTANCE == null){
+    public static UserController getINSTANCE() {
+        if (INSTANCE == null) {
             INSTANCE = new UserController();
         }
         return INSTANCE;
     }
 
-    public void addUser(User user){
+    public void addUser(User user) {
         userArrayList.add(user);
     }
 }
