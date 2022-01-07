@@ -12,7 +12,7 @@
       <VBox fx:id="menuVbox" prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #c70039;">
          <children>
             <ImageView fx:id="icon" fitHeight="165.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="usernameLabel" alignment="CENTER" prefHeight="30.0" prefWidth="220.0" text="Label">
+            <Label fx:id="nameLabel" alignment="CENTER" prefHeight="30.0" prefWidth="220.0" text="Label">
                <font>
                   <Font name="Cambria" size="18.0" />
                </font>

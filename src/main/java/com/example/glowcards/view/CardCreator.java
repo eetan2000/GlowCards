@@ -45,6 +45,7 @@ public class CardCreator extends Pane {
 
         this.setPrefHeight(259);
         this.setPrefWidth(740);
+        this.setStyle("-fx-background-color: lightseagreen");
         this.getChildren().add(numberLabel);
         this.getChildren().add(termLabel);
         this.getChildren().add(definitionLabel);
@@ -54,5 +55,13 @@ public class CardCreator extends Pane {
 
     public void setNumberLabel(int i){
         numberLabel.setText("#" + String.valueOf(i));
+    }
+
+    public String getTerm(){
+        return termTextArea.getText();
+    }
+
+    public String getDefinition(){
+        return definitionTextArea.getText();
     }
 }

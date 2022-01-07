@@ -1,17 +1,20 @@
 package com.example.glowcards.view;
 
+import com.example.glowcards.control.CueCardFactory;
+import com.example.glowcards.control.UserController;
+import com.example.glowcards.model.CueCard;
+import com.example.glowcards.model.Set;
+import com.example.glowcards.model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,16 +25,19 @@ public class Create {
     private AnchorPane componentAnchorPane;
     @FXML
     private VBox mainVBox;
+    @FXML
+    private ScrollPane scrollPane;
+    @FXML
+    private TextField titleTextField;
+
 
     private Parent root;
     private Scene scene;
     private Stage stage;
 
-    @FXML
-    private ScrollPane scrollPane;
-
     private int SPACING_BETWEEN_CARDS = 0;
     private ArrayList<CardCreator> cardCreatorArrayList = new ArrayList<>();
+    private User user;
     private int numOfCards = 0;
 
     public void setUp() {
@@ -40,7 +46,7 @@ public class Create {
             newCard.setTranslateX(14);
             newCard.setTranslateY(127 + SPACING_BETWEEN_CARDS);
 
-            componentAnchorPane.setPrefHeight(480 + (SPACING_BETWEEN_CARDS - 70));
+            componentAnchorPane.setPrefHeight(480 + (SPACING_BETWEEN_CARDS));
             SPACING_BETWEEN_CARDS += 330;
             componentAnchorPane.getChildren().add(newCard);
             newCard.setNumberLabel(i + 1);
@@ -55,8 +61,8 @@ public class Create {
         newCard.setTranslateX(14);
         newCard.setTranslateY(127 + SPACING_BETWEEN_CARDS);
 
-        componentAnchorPane.setPrefHeight(480 + (SPACING_BETWEEN_CARDS - 70));
-        SPACING_BETWEEN_CARDS += 254;
+        componentAnchorPane.setPrefHeight(480 + (SPACING_BETWEEN_CARDS));
+        SPACING_BETWEEN_CARDS += 330;
         numOfCards++;
         newCard.setNumberLabel(numOfCards);
 
@@ -65,7 +71,16 @@ public class Create {
     }
 
     public void createSet(ActionEvent event) {
+        Set newSet = new Set(titleTextField.getText());
+        for (CardCreator curCardCreator : cardCreatorArrayList){
+            String newTerm = curCardCreator.getTerm();
+            String newDefinition = curCardCreator.getDefinition();
+            CueCard newCueCard = CueCardFactory.getINSTANCE().createCueCard(newTerm,newDefinition);
 
+            newSet.addCard(newCueCard);
+        }
+        user.addSet(newSet);
+        UserController.getINSTANCE().saveUser(user);
     }
 
     public void homeSideButton(ActionEvent event) throws IOException {
@@ -74,5 +89,9 @@ public class Create {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void setUser(User user){
+        this.user = user;
     }
 }

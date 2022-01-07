@@ -1,8 +1,5 @@
 package com.example.glowcards.view;
 
-import com.example.glowcards.control.User;
-import com.example.glowcards.control.UserController;
-import com.example.glowcards.control.UserFactory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,16 +26,24 @@ public class Start {
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
 
-        User newUser = UserFactory.getINSTANCE().createUser(username, password);
-        UserController.getINSTANCE().addUser(newUser);
-
         URL fxmlLocation = getClass().getResource("/fxml/Home.fxml");
         FXMLLoader loader = new FXMLLoader(fxmlLocation);
         root = loader.load();
 
         Home homeController = loader.getController();
-        homeController.setUsername(username);
-        homeController.display();
+
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void signUp(ActionEvent event) throws IOException {
+        URL fxmlLocation = getClass().getResource("/fxml/SignUp.fxml");
+        FXMLLoader loader = new FXMLLoader(fxmlLocation);
+        root = loader.load();
+
+        SignUp signUpController = loader.getController();
 
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);

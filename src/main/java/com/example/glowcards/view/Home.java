@@ -1,5 +1,6 @@
 package com.example.glowcards.view;
 
+import com.example.glowcards.model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,9 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -28,18 +27,15 @@ public class Home {
     private Button quizButton;
 
     @FXML
-    private Label usernameLabel;
+    private Label nameLabel;
 
     @FXML
     private VBox menuVbox;
     @FXML
     private AnchorPane mainAnchorPane;
 
-    private String username;
+    private User user;
 
-    public void display() {
-        usernameLabel.setText(username);
-    }
 
     public void homeSideButton(ActionEvent event) throws IOException {
 
@@ -52,6 +48,7 @@ public class Home {
 
         Create createController = loader.getController();
         createController.setUp();
+        createController.setUser(user);
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -63,7 +60,8 @@ public class Home {
 
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUser(User user) {
+        this.user = user;
+        nameLabel.setText(user.getName());
     }
 }

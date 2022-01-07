@@ -37,7 +37,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="510.0" layoutY="29.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="220.0" text="CREATE">
+            <Button fx:id="createButton" layoutX="510.0" layoutY="29.0" mnemonicParsing="false" onAction="#createSet" prefHeight="62.0" prefWidth="220.0" text="CREATE">
                <font>
                   <Font size="18.0" />
                </font>

@@ -21,6 +21,11 @@
                   <Font size="18.0" />
                </font>
             </Label>
+            <Button fx:id="signupButton" mnemonicParsing="false" onAction="#signUp" prefHeight="51.0" prefWidth="194.0" text="Sign-Up" translateX="200.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
          </children>
       </VBox>
       <VBox layoutX="650.0" layoutY="58.0" onDragDetected="#login" prefHeight="483.0" prefWidth="308.0" style="-fx-background-color: #bb86fc;">
