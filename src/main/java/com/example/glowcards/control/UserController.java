@@ -1,13 +1,15 @@
 package com.example.glowcards.control;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
+import com.example.glowcards.model.CueCard;
 import com.example.glowcards.model.Set;
 import com.example.glowcards.model.User;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 public class UserController {
     private ArrayList<User> userArrayList = new ArrayList<>();
@@ -29,21 +31,23 @@ public class UserController {
     }
 
     public void saveUser(User user) {
+        JsonObject info = new JsonObject();
+        JsonArray userInfo = new JsonArray();
         JsonArray collectionJsonArray = new JsonArray();
-        JsonArray setJsonArray = new JsonArray();
 
         //for each set in the user
-        for (int i = 0; i < user.getCollectionArrayList().size() + 1; i++){
-            if (i == 0){
+        for (int i = 0; i < user.getCollectionArrayList().size() + 1; i++) {
+            if (i == 0) {
                 JsonObject userDetails = new JsonObject();
-                userDetails.addProperty("name" , user.getName());
-                userDetails.addProperty("username" , user.getUsername());
-                userDetails.addProperty("password" , user.getPassword());
+                userDetails.addProperty("name", user.getName());
+                userDetails.addProperty("username", user.getUsername());
+                userDetails.addProperty("password", user.getPassword());
 
-                setJsonArray.add(userDetails);
-            }
-            else {
+                userInfo.add(userDetails);
+                info.add("user info", userInfo);
+            } else {
                 Set curSet = user.getCollectionArrayList().get(i - 1);
+                JsonArray setJsonArray = new JsonArray();
                 //for each cue card in the set
                 //the first entry contains title
                 for (int j = 0; j < curSet.getSetArrayList().size() + 1; j++) {
@@ -61,16 +65,73 @@ public class UserController {
                 collectionJsonArray.add(setJsonArray);
             }
         }
+        info.add("collection", collectionJsonArray);
         try {
             FileWriter file = new FileWriter("./Users/" + user.getUsername() + ".json");
-            file.write(collectionJsonArray.toString());
+            file.write(info.toString());
             file.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void loadUsers(){
+    public void loadUsers() {
+        File folder = new File("./Users");
+        File[] listOfFiles = folder.listFiles();
 
+        String name = null;
+        String username = null;
+        String password = null;
+        String title;
+
+        for (int i = 0; i < listOfFiles.length; i++) {
+            if (listOfFiles[i].isFile()) {
+                try {
+                    JsonElement fileElement = JsonParser.parseReader(new FileReader(listOfFiles[i]));
+                    JsonObject fileObject = fileElement.getAsJsonObject();
+
+                    if (fileObject.toString().equals("{}")) {
+                        return;
+                    }
+
+                    JsonArray jsonArrayOfUserInfo = fileObject.get("user info").getAsJsonArray();
+                    for (JsonElement curElement : jsonArrayOfUserInfo) {
+                        JsonObject curObject = curElement.getAsJsonObject();
+
+                        name = curObject.get("name").getAsString();
+                        username = curObject.get("username").getAsString();
+                        password = curObject.get("password").getAsString();
+                    }
+                    User loadedUser = UserFactory.getINSTANCE().createUser(name,username,password);
+
+                    JsonArray jsonArrayOfCollection = fileObject.get("collection").getAsJsonArray();
+                    Set loadedSet = null;
+                    for (JsonElement curElement : jsonArrayOfCollection) {
+                        JsonArray curSet = curElement.getAsJsonArray();
+                        int j = 0;
+                        for (JsonElement curElementInSet : curSet) {
+                            JsonObject curObject = curElementInSet.getAsJsonObject();
+                            if (j == 0){
+                                title = curObject.get("title").getAsString();
+                                loadedSet = SetFactory.getINSTANCE().createSet(title);
+                                j++;
+                            }
+                            else {
+                                System.out.println(curObject.toString());
+                                String term = curObject.get("term").getAsString();
+                                String definition = curObject.get("definition").getAsString();
+
+                                CueCard loadedCard = CueCardFactory.getINSTANCE().createCueCard(term, definition);
+                                loadedSet.addCard(loadedCard);
+                            }
+                        }
+                        loadedUser.addSet(loadedSet);
+                        addUser(loadedUser);
+                    }
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }
