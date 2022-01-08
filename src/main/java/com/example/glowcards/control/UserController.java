@@ -102,7 +102,7 @@ public class UserController {
                         username = curObject.get("username").getAsString();
                         password = curObject.get("password").getAsString();
                     }
-                    User loadedUser = UserFactory.getINSTANCE().createUser(name,username,password);
+                    User loadedUser = UserFactory.getINSTANCE().createUser(name, username, password);
 
                     JsonArray jsonArrayOfCollection = fileObject.get("collection").getAsJsonArray();
                     Set loadedSet = null;
@@ -111,12 +111,11 @@ public class UserController {
                         int j = 0;
                         for (JsonElement curElementInSet : curSet) {
                             JsonObject curObject = curElementInSet.getAsJsonObject();
-                            if (j == 0){
+                            if (j == 0) {
                                 title = curObject.get("title").getAsString();
                                 loadedSet = SetFactory.getINSTANCE().createSet(title);
                                 j++;
-                            }
-                            else {
+                            } else {
                                 System.out.println(curObject.toString());
                                 String term = curObject.get("term").getAsString();
                                 String definition = curObject.get("definition").getAsString();
@@ -133,5 +132,15 @@ public class UserController {
                 }
             }
         }
+    }
+
+
+    public User findUser(String username, String password) {
+        for (User curUser : userArrayList) {
+            if (curUser.getUsername().equals(username) && curUser.getPassword().equals(password)) {
+                return curUser;
+            }
+        }
+        return null;
     }
 }
