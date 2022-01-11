@@ -15,7 +15,7 @@
       <VBox prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #b3d1b3;">
          <children>
             <ImageView fitHeight="165.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="usernameLabel" alignment="CENTER" prefHeight="30.0" prefWidth="220.0" text="Label">
+            <Label fx:id="nameLabel" alignment="CENTER" prefHeight="30.0" prefWidth="220.0" text="Label">
                <font>
                   <Font size="18.0" />
                </font>
@@ -25,7 +25,7 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <Button fx:id="setsButton" focusTraversable="false" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Sets" translateY="80.0" />
+            <Button fx:id="setsButton" focusTraversable="false" mnemonicParsing="false" onAction="#setsSideButton" prefHeight="50.0" prefWidth="220.0" text="Sets" translateY="80.0" />
             <Button fx:id="quizButton" focusTraversable="false" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Quiz" translateY="80.0" />
             <Button fx:id="settingsButton" focusTraversable="false" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Settings" translateY="155.0" />
          </children>

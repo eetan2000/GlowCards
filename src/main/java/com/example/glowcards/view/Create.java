@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -30,7 +31,8 @@ public class Create {
     private ScrollPane scrollPane;
     @FXML
     private TextField titleTextField;
-
+    @FXML
+    private Label nameLabel;
 
     private Parent root;
     private Scene scene;
@@ -98,7 +100,23 @@ public class Create {
         stage.show();
     }
 
+    public void setsSideButton(ActionEvent event) throws IOException {
+        URL fxmlLocation = getClass().getResource("/fxml/Sets.fxml");
+        FXMLLoader loader = new FXMLLoader(fxmlLocation);
+        Parent root = loader.load();
+
+        Sets setsController = loader.getController();
+        setsController.setUser(user);
+        setsController.setUp();
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void setUser(User user){
         this.user = user;
+        nameLabel.setText(user.getName());
     }
 }

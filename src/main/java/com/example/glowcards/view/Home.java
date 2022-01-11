@@ -57,7 +57,18 @@ public class Home {
     }
 
     public void setsSideButton(ActionEvent event) throws IOException {
+        URL fxmlLocation = getClass().getResource("/fxml/Sets.fxml");
+        FXMLLoader loader = new FXMLLoader(fxmlLocation);
+        Parent root = loader.load();
 
+        Sets setsController = loader.getController();
+        setsController.setUser(user);
+        setsController.setUp();
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void setUser(User user) {

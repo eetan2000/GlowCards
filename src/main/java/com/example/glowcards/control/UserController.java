@@ -116,7 +116,6 @@ public class UserController {
                                 loadedSet = SetFactory.getINSTANCE().createSet(title);
                                 j++;
                             } else {
-                                System.out.println(curObject.toString());
                                 String term = curObject.get("term").getAsString();
                                 String definition = curObject.get("definition").getAsString();
 

@@ -24,4 +24,8 @@ public class Set {
     public String getTitle() {
         return title;
     }
+
+    public int getSize(){
+        return setArrayList.size();
+    }
 }
