@@ -133,6 +133,14 @@ public class UserController {
         }
     }
 
+    public boolean uniqueUsername(String username) {
+        for (User curUser : userArrayList) {
+            if (curUser.getUsername().equals(username)){
+                return false;
+            }
+        }
+        return true;
+    }
 
     public User findUser(String username, String password) {
         for (User curUser : userArrayList) {

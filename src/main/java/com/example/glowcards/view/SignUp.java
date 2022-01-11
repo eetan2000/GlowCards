@@ -42,6 +42,11 @@ public class SignUp {
             passwordAlert.setContentText("Your password does not match.");
             passwordAlert.showAndWait();
         }
+        if (!UserController.getINSTANCE().uniqueUsername(username)){
+            Alert passwordAlert = new Alert(Alert.AlertType.ERROR);
+            passwordAlert.setContentText("There is already a user with the same username.");
+            passwordAlert.showAndWait();
+        }
         else {
             User newUser = UserFactory.getINSTANCE().createUser(name,username,password);
             UserController.getINSTANCE().addUser(newUser);
@@ -58,6 +63,19 @@ public class SignUp {
             stage.setScene(scene);
             stage.show();
         }
+    }
 
+    public void returnToStart(ActionEvent event) throws IOException {
+        URL fxmlLocation = getClass().getResource("/fxml/Start.fxml");
+        FXMLLoader loader = new FXMLLoader(fxmlLocation);
+        Parent root = loader.load();
+
+        Start startController = loader.getController();
+
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }
