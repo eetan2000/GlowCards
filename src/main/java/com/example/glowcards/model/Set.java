@@ -28,4 +28,12 @@ public class Set {
     public int getSize(){
         return setArrayList.size();
     }
+
+    public String getTerm(int index) {
+        return setArrayList.get(index).getTerm();
+    }
+
+    public String getDefinition(int index) {
+        return setArrayList.get(index).getDefinition();
+    }
 }

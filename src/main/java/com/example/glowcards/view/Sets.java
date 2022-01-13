@@ -32,12 +32,12 @@ public class Sets {
 
     public void setUp() {
         for (Set curSet : user.getCollectionArrayList()) {
-            SetDisplay newSetDisplay = new SetDisplay(curSet);
-            newSetDisplay.setLayoutX(14);
-            newSetDisplay.setLayoutY(34 + SPACING_BETWEEN_CARDS);
+            SetCard newSetCard = new SetCard(curSet);
+            newSetCard.setLayoutX(14);
+            newSetCard.setLayoutY(34 + SPACING_BETWEEN_CARDS);
             SPACING_BETWEEN_CARDS += 297;
 
-            componentAnchorPane.getChildren().add(newSetDisplay);
+            componentAnchorPane.getChildren().add(newSetCard);
             if (user.getCollectionArrayList().size() > 2) {
                 componentAnchorPane.setPrefHeight(SPACING_BETWEEN_CARDS);
             }

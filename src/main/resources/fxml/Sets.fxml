@@ -18,14 +18,14 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="homeButton" mnemonicParsing="false" onAction="#homeSideButton" prefHeight="50.0" prefWidth="220.0" text="Home" translateY="80.0" />
-            <Button fx:id="createSideButton" mnemonicParsing="false" onAction="#createSideButton" prefHeight="50.0" prefWidth="220.0" text="Create" translateY="80.0" />
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Sets" translateY="80.0">
+            <Button fx:id="homeButton" focusTraversable="false" mnemonicParsing="false" onAction="#homeSideButton" prefHeight="50.0" prefWidth="220.0" text="Home" translateY="80.0" />
+            <Button fx:id="createSideButton" focusTraversable="false" mnemonicParsing="false" onAction="#createSideButton" prefHeight="50.0" prefWidth="220.0" text="Create" translateY="80.0" />
+            <Button focusTraversable="false" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Sets" translateY="80.0">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Quiz" translateY="80.0" />
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Settings" translateY="155.0" />
+            <Button focusTraversable="false" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Quiz" translateY="80.0" />
+            <Button focusTraversable="false" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Settings" translateY="155.0" />
          </children>
       </VBox>
       <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="220.0" prefHeight="600.0" prefWidth="780.0">
