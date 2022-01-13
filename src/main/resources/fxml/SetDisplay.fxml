@@ -7,14 +7,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="leftButton" focusTraversable="false" layoutX="219.0" layoutY="388.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="101.0" text="←">
+      <Button fx:id="leftButton" focusTraversable="false" layoutX="219.0" layoutY="388.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="←">
          <font>
             <Font name="Arial Black" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="rightButton" focusTraversable="false" layoutX="378.0" layoutY="388.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="101.0" text="→">
+      <Button fx:id="rightButton" focusTraversable="false" layoutX="378.0" layoutY="388.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="→">
          <font>
             <Font name="Arial Black" size="18.0" />
          </font>
@@ -24,9 +24,9 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Pane fx:id="cardPane" layoutX="118.0" layoutY="59.0" prefHeight="298.0" prefWidth="464.0" style="-fx-background-color: #34dcde;">
+      <Pane fx:id="cardPane" layoutX="120.0" layoutY="58.0" prefHeight="300.0" prefWidth="460.0" style="-fx-background-color: #34dcde;">
          <children>
-            <Text fx:id="cardText" layoutX="24.0" layoutY="149.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="416.0000305175781">
+            <Text fx:id="cardText" layoutX="22.0" layoutY="150.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="416.0000305175781">
                <font>
                   <Font size="18.0" />
                </font>

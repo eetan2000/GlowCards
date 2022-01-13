@@ -42,14 +42,20 @@ public class SignUp {
             passwordAlert.setContentText("Your password does not match.");
             passwordAlert.showAndWait();
         }
-        if (!UserController.getINSTANCE().uniqueUsername(username)){
+        else if (!UserController.getINSTANCE().uniqueUsername(username)){
             Alert passwordAlert = new Alert(Alert.AlertType.ERROR);
             passwordAlert.setContentText("There is already a user with the same username.");
+            passwordAlert.showAndWait();
+        }
+        else if (nameTextField.getText().isEmpty() && usernameTextField.getText().isEmpty() && passwordTextField.getText().isEmpty()) {
+            Alert passwordAlert = new Alert(Alert.AlertType.ERROR);
+            passwordAlert.setContentText("You have left one of the boxes blank.");
             passwordAlert.showAndWait();
         }
         else {
             User newUser = UserFactory.getINSTANCE().createUser(name,username,password);
             UserController.getINSTANCE().addUser(newUser);
+            UserController.getINSTANCE().saveUser(newUser);
 
             URL fxmlLocation = getClass().getResource("/fxml/Home.fxml");
             FXMLLoader loader = new FXMLLoader(fxmlLocation);
