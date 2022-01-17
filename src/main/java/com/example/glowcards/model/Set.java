@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Set {
     private ArrayList<CueCard> setArrayList = new ArrayList<>();
     private String title;
+    private int score;
 
     public Set(String title){
         this.title = title;

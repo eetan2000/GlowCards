@@ -72,4 +72,19 @@ public class Sets {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void quizSideButton(ActionEvent event) throws IOException {
+        URL fxmlLocation = getClass().getResource("/fxml/Quiz.fxml");
+        FXMLLoader loader = new FXMLLoader(fxmlLocation);
+        Parent root = loader.load();
+
+        Quiz quizController = loader.getController();
+        quizController.setUser(user);
+        quizController.setUp();
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }

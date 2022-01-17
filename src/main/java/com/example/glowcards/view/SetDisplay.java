@@ -25,7 +25,7 @@ public class SetDisplay {
     private int index;
     private String termOrDefinition = "term";
 
-    public SetDisplay(Set set){
+    public SetDisplay(Set set) {
         this.set = set;
         index = 0;
 
@@ -108,18 +108,17 @@ public class SetDisplay {
         }
     }
 
-    public void switchCard(){
+    public void switchCard() {
         if (termOrDefinition.equals("term")) {
             cardText.setText(getDefinition(index));
             termOrDefinition = "definition";
-        }
-        else {
+        } else {
             cardText.setText(getTerm(index));
             termOrDefinition = "term";
         }
     }
 
-    public void startForm(){
+    public void startForm() {
         Scene scene = new Scene(mainAnchorPane);
         Stage stage = new Stage();
         stage.setScene(scene);
