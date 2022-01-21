@@ -42,6 +42,7 @@ public class UserController {
                 userDetails.addProperty("name", user.getName());
                 userDetails.addProperty("username", user.getUsername());
                 userDetails.addProperty("password", user.getPassword());
+                userDetails.addProperty("image", user.getImage());
 
                 userInfo.add(userDetails);
                 info.add("user info", userInfo);
@@ -82,6 +83,7 @@ public class UserController {
         String name = null;
         String username = null;
         String password = null;
+        String image = null;
         String title;
 
         for (int i = 0; i < listOfFiles.length; i++) {
@@ -101,8 +103,9 @@ public class UserController {
                         name = curObject.get("name").getAsString();
                         username = curObject.get("username").getAsString();
                         password = curObject.get("password").getAsString();
+                        image = curObject.get("image").getAsString();
                     }
-                    User loadedUser = UserFactory.getINSTANCE().createUser(name, username, password);
+                    User loadedUser = UserFactory.getINSTANCE().createUser(name, username, password, image);
 
                     JsonArray jsonArrayOfCollection = fileObject.get("collection").getAsJsonArray();
                     Set loadedSet = null;
@@ -124,8 +127,8 @@ public class UserController {
                             }
                         }
                         loadedUser.addSet(loadedSet);
-                        addUser(loadedUser);
                     }
+                    addUser(loadedUser);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
@@ -135,7 +138,7 @@ public class UserController {
 
     public boolean uniqueUsername(String username) {
         for (User curUser : userArrayList) {
-            if (curUser.getUsername().equals(username)){
+            if (curUser.getUsername().equals(username)) {
                 return false;
             }
         }
@@ -149,5 +152,17 @@ public class UserController {
             }
         }
         return null;
+    }
+
+    public void setScore(String username, String setTitle, int score) {
+        for (User curUser : userArrayList) {
+            if (username.equals(curUser.getUsername())) {
+                for (Set curSet : curUser.getCollectionArrayList()) {
+                    if (setTitle.equals(curSet.getTitle())) {
+                        curSet.setScore(score);
+                    }
+                }
+            }
+        }
     }
 }

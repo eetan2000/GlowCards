@@ -3,6 +3,8 @@ package com.example.glowcards.view;
 import com.example.glowcards.model.CueCard;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -55,7 +57,7 @@ public class QuizQuestion extends Pane {
         definitionLabel.setPrefHeight(114);
         numLabel.setPrefWidth(56);
         numLabel.setPrefHeight(23);
-        instructionLabel.setPrefWidth(125);
+        instructionLabel.setPrefWidth(170);
         instructionLabel.setPrefHeight(20);
         checkBox1.setPrefWidth(276);
         checkBox1.setPrefHeight(68);
@@ -109,6 +111,25 @@ public class QuizQuestion extends Pane {
         label4.setWrapText(true);
         instructionLabel.setText("Choose matching term:");
 
+        definitionLabel.setFont(new Font("Leelawadee UI",20));
+        definitionLabel.setTextFill(Color.web("#ffffff"));
+        instructionLabel.setFont(new Font("Leelawadee UI",14));
+        instructionLabel.setTextFill(Color.web("#ffffff"));
+        numLabel.setFont(new Font("Leelawadee UI" , 14));
+        numLabel.setTextFill(Color.web("#ffffff"));
+        label1.setFont(new Font("Leelawadee UI",14));
+        label2.setFont(new Font("Leelawadee UI",14));
+        label3.setFont(new Font("Leelawadee UI",14));
+        label4.setFont(new Font("Leelawadee UI",14));
+        label1.setTextFill(Color.web("#ffffff"));
+        label2.setTextFill(Color.web("#ffffff"));
+        label3.setTextFill(Color.web("#ffffff"));
+        label4.setTextFill(Color.web("#ffffff"));
+        label1.setWrapText(true);
+        label2.setWrapText(true);
+        label3.setWrapText(true);
+        label4.setWrapText(true);
+
         this.getChildren().add(definitionLabel);
         this.getChildren().add(numLabel);
         this.getChildren().add(instructionLabel);
@@ -116,7 +137,7 @@ public class QuizQuestion extends Pane {
         this.getChildren().add(checkBox2);
         this.getChildren().add(checkBox3);
         this.getChildren().add(checkBox4);
-        this.setStyle("-fx-background-color: #e83f77");
+        this.setStyle("-fx-background-color: #568EA6");
         this.setPrefWidth(715);
         this.setPrefHeight(340);
 
@@ -153,7 +174,7 @@ public class QuizQuestion extends Pane {
         definitionLabel.setPrefHeight(114);
         numLabel.setPrefWidth(56);
         numLabel.setPrefHeight(23);
-        instructionLabel.setPrefWidth(125);
+        instructionLabel.setPrefWidth(170);
         instructionLabel.setPrefHeight(20);
         checkBox1.setPrefWidth(276);
         checkBox1.setPrefHeight(68);
@@ -206,6 +227,26 @@ public class QuizQuestion extends Pane {
         label3.setWrapText(true);
         label4.setWrapText(true);
 
+        definitionLabel.setFont(new Font("Leelawadee UI",20));
+        definitionLabel.setTextFill(Color.web("#ffffff"));
+        definitionLabel.setWrapText(true);
+        instructionLabel.setFont(new Font("Leelawadee UI",12));
+        instructionLabel.setTextFill(Color.web("#ffffff"));
+        numLabel.setFont(new Font("Leelawadee UI" , 14));
+        numLabel.setTextFill(Color.web("#ffffff"));
+        label1.setFont(new Font("Leelawadee UI",14));
+        label2.setFont(new Font("Leelawadee UI",14));
+        label3.setFont(new Font("Leelawadee UI",14));
+        label4.setFont(new Font("Leelawadee UI",14));
+        label1.setTextFill(Color.web("#ffffff"));
+        label2.setTextFill(Color.web("#ffffff"));
+        label3.setTextFill(Color.web("#ffffff"));
+        label4.setTextFill(Color.web("#ffffff"));
+        label1.setWrapText(true);
+        label2.setWrapText(true);
+        label3.setWrapText(true);
+        label4.setWrapText(true);
+
         this.getChildren().add(definitionLabel);
         this.getChildren().add(numLabel);
         this.getChildren().add(instructionLabel);
@@ -213,7 +254,7 @@ public class QuizQuestion extends Pane {
         this.getChildren().add(checkBox2);
         this.getChildren().add(checkBox3);
         this.getChildren().add(checkBox4);
-        this.setStyle("-fx-background-color: #e83f77");
+        this.setStyle("-fx-background-color: #568EA6");
         this.setPrefWidth(715);
         this.setPrefHeight(340);
 
@@ -253,6 +294,7 @@ public class QuizQuestion extends Pane {
             if (answerKey.equals(label4.getText())) {
                 checkBox4.setStyle("-fx-background-color: #deb243");
             }
+            incorrect = true;
         }
         else {
             if (answerKey.equals(label1.getText())) {
@@ -338,21 +380,21 @@ public class QuizQuestion extends Pane {
     }
 
     private void setBorderEntered(Pane pane) {
-        pane.setStyle("-fx-border-color: #ff699a");
+        pane.setStyle("-fx-background-color: #305F72");
     }
 
     private void setBorderExited() {
         if (!checkBox1Selected) {
-            checkBox1.setStyle("-fx-border-color: #e83f77");
+            checkBox1.setStyle("-fx-background-color: #568EA6");
         }
         if (!checkBox2Selected) {
-            checkBox2.setStyle("-fx-border-color: #e83f77");
+            checkBox2.setStyle("-fx-background-color: #568EA6");
         }
         if (!checkBox3Selected) {
-            checkBox3.setStyle("-fx-border-color: #e83f77");
+            checkBox3.setStyle("-fx-background-color: #568EA6");
         }
         if (!checkBox4Selected) {
-            checkBox4.setStyle("-fx-border-color: #e83f77");
+            checkBox4.setStyle("-fx-background-color: #568EA6");
         }
     }
 
@@ -370,12 +412,12 @@ public class QuizQuestion extends Pane {
     }
 
     public void selected(Pane pane) {
-        checkBox1.setStyle("-fx-background-color: #e83f77");
-        checkBox2.setStyle("-fx-background-color: #e83f77");
-        checkBox3.setStyle("-fx-background-color: #e83f77");
-        checkBox4.setStyle("-fx-background-color: #e83f77");
+        checkBox1.setStyle("-fx-background-color: #568EA6 ");
+        checkBox2.setStyle("-fx-background-color: #568EA6 ");
+        checkBox3.setStyle("-fx-background-color: #568EA6 ");
+        checkBox4.setStyle("-fx-background-color: #568EA6 ");
 
-        pane.setStyle("-fx-border-color: #ff699a");
+        pane.setStyle("-fx-background-color: #305F72");
     }
 
     public void setSize(int size) {

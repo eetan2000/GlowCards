@@ -37,4 +37,12 @@ public class Set {
     public String getDefinition(int index) {
         return setArrayList.get(index).getDefinition();
     }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public int getScore() {
+        return score;
+    }
 }

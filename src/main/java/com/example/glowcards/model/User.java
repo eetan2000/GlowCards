@@ -6,11 +6,13 @@ public class User {
     private String name;
     private String username;
     private String password;
+    private String image;
 
-    public User(String name, String username, String password) {
+    public User(String name, String username, String password, String image) {
         this.name = name;
         this.username = username;
         this.password = password;
+        this.image = image;
     }
 
     public void addSet(Set newSet){
@@ -31,5 +33,9 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public String getImage() {
+        return image;
     }
 }

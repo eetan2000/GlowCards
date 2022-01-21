@@ -6,14 +6,19 @@ import com.example.glowcards.model.CueCard;
 import com.example.glowcards.model.Set;
 import com.example.glowcards.model.User;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -26,13 +31,25 @@ public class Create {
     @FXML
     private AnchorPane componentAnchorPane;
     @FXML
-    private VBox mainVBox;
-    @FXML
     private ScrollPane scrollPane;
     @FXML
     private TextField titleTextField;
     @FXML
     private Label nameLabel;
+    @FXML
+    private Button homeSideButton;
+    @FXML
+    private Button createSideButton;
+    @FXML
+    private Button setsSideButton;
+    @FXML
+    private Button quizSideButton;
+    @FXML
+    private Button addCardButton;
+    @FXML
+    private Button createButton;
+    @FXML
+    private ImageView icon;
 
     private Parent root;
     private Scene scene;
@@ -44,6 +61,8 @@ public class Create {
     private int numOfCards = 0;
 
     public void setUp() {
+        Image image = new Image(getClass().getResourceAsStream("/avatars/" + user.getImage()+".png"));
+        icon.setImage(image);
         for (int i = 0; i < 5; i++) {
             CardCreator newCard = new CardCreator();
             newCard.setTranslateX(14);
@@ -57,6 +76,80 @@ public class Create {
             numOfCards++;
             cardCreatorArrayList.add(newCard);
         }
+        homeSideButton.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                homeSideButton.setStyle("-fx-background-color: #F18C8E");
+            }
+        });
+        createSideButton.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                createSideButton.setStyle("-fx-background-color: #F18C8E");
+            }
+        });
+        setsSideButton.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setsSideButton.setStyle("-fx-background-color: #F18C8E");
+            }
+        });
+        quizSideButton.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                quizSideButton.setStyle("-fx-background-color: #F18C8E");
+            }
+        });
+
+        homeSideButton.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                homeSideButton.setStyle("-fx-background-color: #FF9187");
+            }
+        });
+        createSideButton.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                createSideButton.setStyle("-fx-background-color: #FF9187");
+            }
+        });
+        setsSideButton.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setsSideButton.setStyle("-fx-background-color: #FF9187");
+            }
+        });
+        quizSideButton.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                quizSideButton.setStyle("-fx-background-color: #FF9187");
+            }
+        });
+
+        addCardButton.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                addCardButton.setStyle("-fx-background-color: #305F72");
+            }
+        });
+        createButton.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                createButton.setStyle("-fx-background-color: #305F72");
+            }
+        });
+        addCardButton.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                addCardButton.setStyle("-fx-background-color: #568EA6");
+            }
+        });
+        createButton.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                createButton.setStyle("-fx-background-color: #568EA6");
+            }
+        });
     }
 
     public void addCard(ActionEvent event) {
@@ -93,6 +186,7 @@ public class Create {
 
         Home homeController = loader.getController();
         homeController.setUser(user);
+        homeController.setUp();
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

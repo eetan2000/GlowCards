@@ -7,13 +7,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #3700b3;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.glowcards.view.Start">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #FFE9D8;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.glowcards.view.Start">
    <children>
-      <VBox prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #1f1b24;">
+      <VBox prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #8FB9A8;">
          <children>
-            <Label alignment="BOTTOM_CENTER" prefHeight="228.0" prefWidth="600.0" text="Welcome to GlowCards" textFill="#c3a0a0">
+            <Label alignment="BOTTOM_CENTER" prefHeight="228.0" prefWidth="600.0" text="Welcome to GlowCards" textFill="WHITE">
                <font>
-                  <Font size="36.0" />
+                  <Font name="Leelawadee UI" size="36.0" />
                </font>
             </Label>
             <Label alignment="TOP_CENTER" prefHeight="93.0" prefWidth="602.0" text="Create and edit your own flashcards!" textFill="WHITE">
@@ -21,25 +21,34 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="signupButton" mnemonicParsing="false" onAction="#signUp" prefHeight="51.0" prefWidth="194.0" text="Sign-Up" translateX="200.0">
+            <Button fx:id="signupButton" mnemonicParsing="false" onAction="#signUp" prefHeight="51.0" prefWidth="194.0" style="-fx-background-color: FEFAD4;" text="Sign-Up" translateX="200.0">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Leelawadee UI" size="18.0" />
                </font>
             </Button>
          </children>
       </VBox>
-      <VBox layoutX="650.0" layoutY="58.0" onDragDetected="#login" prefHeight="483.0" prefWidth="308.0" style="-fx-background-color: #bb86fc;">
+      <VBox layoutX="650.0" layoutY="58.0" onDragDetected="#login" prefHeight="483.0" prefWidth="308.0" style="-fx-background-color: #FF9187;">
          <children>
-            <Label alignment="BOTTOM_CENTER" prefHeight="93.0" prefWidth="308.0" text="Sign-in">
+            <Label alignment="BOTTOM_CENTER" prefHeight="93.0" prefWidth="308.0" text="Sign-in" textFill="WHITE">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Leelawadee UI" size="24.0" />
                </font>
             </Label>
-            <Label alignment="BOTTOM_LEFT" prefHeight="71.0" prefWidth="308.0" text="   Username:" />
+            <Label alignment="BOTTOM_LEFT" prefHeight="71.0" prefWidth="308.0" text="   Username:" textFill="WHITE">
+               <font>
+                  <Font name="Leelawadee UI" size="14.0" />
+               </font></Label>
             <TextField fx:id="usernameTextField" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="290.0" translateX="10.0" />
-            <Label alignment="BOTTOM_LEFT" prefHeight="78.0" prefWidth="309.0" text="   Password:" />
+            <Label alignment="BOTTOM_LEFT" prefHeight="78.0" prefWidth="309.0" text="   Password:" textFill="WHITE">
+               <font>
+                  <Font name="Leelawadee UI" size="14.0" />
+               </font></Label>
             <TextField fx:id="passwordTextField" maxWidth="-Infinity" prefHeight="25.0" prefWidth="290.0" translateX="10.0" />
-            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#login" prefHeight="34.0" prefWidth="113.0" text="Login" translateX="100.0" translateY="80.0" />
+            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#login" prefHeight="34.0" prefWidth="113.0" style="-fx-background-color: #765D69;" text="Login" textFill="WHITE" translateX="100.0" translateY="80.0">
+               <font>
+                  <Font name="Leelawadee UI" size="14.0" />
+               </font></Button>
          </children>
       </VBox>
    </children>

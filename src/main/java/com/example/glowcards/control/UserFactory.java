@@ -15,7 +15,7 @@ public class UserFactory {
         return INSTANCE;
     }
 
-    public User createUser(String name, String username, String password) {
-        return new User(name, username, password);
+    public User createUser(String name, String username, String password, String image) {
+        return new User(name, username, password, image);
     }
 }

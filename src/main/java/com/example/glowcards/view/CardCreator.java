@@ -9,6 +9,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 public class CardCreator extends Pane {
@@ -45,9 +47,18 @@ public class CardCreator extends Pane {
         definitionTextArea.setPrefHeight(128);
         definitionTextArea.setWrapText(true);
 
+        numberLabel.setFont(new Font("Leelawadee UI",20));
+        numberLabel.setTextFill(Color.web("#ffffff"));
+        termLabel.setFont(new Font("Leelawadee UI",14));
+        termLabel.setTextFill(Color.web("#ffffff"));
+        definitionLabel.setFont(new Font("Leelawadee UI",14));
+        definitionLabel.setTextFill(Color.web("#ffffff"));
+        termTextArea.setFont(new Font("Leelawadee UI",14));
+        definitionTextArea.setFont(new Font("Leelawadee UI",14));
+
         this.setPrefHeight(259);
         this.setPrefWidth(740);
-        this.setStyle("-fx-background-color: lightseagreen");
+        this.setStyle("-fx-background-color: #83DCF1");
         this.getChildren().add(numberLabel);
         this.getChildren().add(termLabel);
         this.getChildren().add(definitionLabel);

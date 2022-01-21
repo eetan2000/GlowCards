@@ -12,48 +12,63 @@
 
 <AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.glowcards.view.Create">
    <children>
-      <VBox prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #b3d1b3;">
+      <VBox prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #FF9187;">
          <children>
-            <ImageView fitHeight="165.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="nameLabel" alignment="CENTER" prefHeight="30.0" prefWidth="220.0" text="Label">
+            <ImageView fx:id="icon" fitHeight="165.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true" translateX="27.5" translateY="5.0" />
+            <Label fx:id="nameLabel" alignment="CENTER" prefHeight="30.0" prefWidth="220.0" text="Label" textFill="WHITE" translateY="10.0">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Leelawadee UI" size="20.0" />
                </font>
             </Label>
-            <Button fx:id="homeButton" focusTraversable="false" mnemonicParsing="false" onAction="#homeSideButton" prefHeight="50.0" prefWidth="220.0" text="Home" translateY="80.0" />
-            <Button fx:id="createButton" focusTraversable="false" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Create" translateY="80.0">
+            <Button fx:id="homeSideButton" focusTraversable="false" mnemonicParsing="false" onAction="#homeSideButton" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #FF9187;" text="Home" textFill="WHITE" translateY="80.0">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="Leelawadee UI" size="14.0" />
                </font></Button>
-            <Button fx:id="setsButton" focusTraversable="false" mnemonicParsing="false" onAction="#setsSideButton" prefHeight="50.0" prefWidth="220.0" text="Sets" translateY="80.0" />
-            <Button fx:id="quizButton" focusTraversable="false" mnemonicParsing="false" onAction="#quizSideButton" prefHeight="50.0" prefWidth="220.0" text="Quiz" translateY="80.0" />
-            <Button fx:id="settingsButton" focusTraversable="false" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" text="Settings" translateY="155.0" />
+            <Button fx:id="createSideButton" focusTraversable="false" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #FF9187;" text="Create" textFill="WHITE" translateY="80.0">
+               <font>
+                  <Font name="Leelawadee UI Bold" size="14.0" />
+               </font></Button>
+            <Button fx:id="setsSideButton" focusTraversable="false" mnemonicParsing="false" onAction="#setsSideButton" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #FF9187;" text="Sets" textFill="WHITE" translateY="80.0">
+               <font>
+                  <Font name="Leelawadee UI" size="14.0" />
+               </font></Button>
+            <Button fx:id="quizSideButton" focusTraversable="false" mnemonicParsing="false" onAction="#quizSideButton" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #FF9187;" text="Quiz" textFill="WHITE" translateY="80.0">
+               <font>
+                  <Font name="Leelawadee UI" size="14.0" />
+               </font></Button>
+            <Button fx:id="settingsButton" focusTraversable="false" mnemonicParsing="false" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #FF9187;" text="Settings" textFill="WHITE" translateY="155.0">
+               <font>
+                  <Font name="Leelawadee UI" size="14.0" />
+               </font></Button>
          </children>
       </VBox>
-      <Pane fx:id="bottomPane" layoutX="220.0" layoutY="481.0" prefHeight="119.0" prefWidth="780.0" style="-fx-background-color: #ce593d;">
+      <Pane fx:id="bottomPane" layoutX="220.0" layoutY="481.0" prefHeight="119.0" prefWidth="780.0" style="-fx-background-color: #FF9187;">
          <children>
-            <Button fx:id="addCardButton" layoutX="50.0" layoutY="29.0" mnemonicParsing="false" onAction="#addCard" prefHeight="62.0" prefWidth="242.0" text="ADD CARD">
+            <Button fx:id="addCardButton" layoutX="50.0" layoutY="29.0" mnemonicParsing="false" onAction="#addCard" prefHeight="62.0" prefWidth="242.0" style="-fx-background-color: #568EA6;" text="ADD CARD" textFill="WHITE">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Leelawadee UI Bold" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="createButton" layoutX="510.0" layoutY="29.0" mnemonicParsing="false" onAction="#createSet" prefHeight="62.0" prefWidth="220.0" text="CREATE">
+            <Button fx:id="createButton" layoutX="510.0" layoutY="29.0" mnemonicParsing="false" onAction="#createSet" prefHeight="62.0" prefWidth="220.0" style="-fx-background-color: #568EA6;" text="CREATE" textFill="WHITE">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Leelawadee UI Bold" size="18.0" />
                </font>
             </Button>
          </children>
       </Pane>
-      <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="220.0" prefHeight="480.0" prefWidth="780.0">
+      <ScrollPane fx:id="scrollPane" focusTraversable="false" hbarPolicy="NEVER" layoutX="220.0" prefHeight="480.0" prefWidth="780.0">
         <content>
-          <AnchorPane fx:id="componentAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="780.0">
+          <AnchorPane fx:id="componentAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="780.0" style="-fx-background-color: #FFE9D8;">
                <children>
                   <Label fx:id="titleLabel" layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="170.0" text="Title:">
                      <font>
-                        <Font size="18.0" />
+                        <Font name="Leelawadee UI Bold" size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="titleTextField" layoutX="14.0" layoutY="44.0" prefHeight="30.0" prefWidth="509.0" promptText="..." />
+                  <TextField fx:id="titleTextField" layoutX="14.0" layoutY="44.0" prefHeight="30.0" prefWidth="509.0" promptText="...">
+                     <font>
+                        <Font name="Leelawadee UI" size="12.0" />
+                     </font></TextField>
                </children>
             </AnchorPane>
         </content>

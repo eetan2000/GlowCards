@@ -29,9 +29,25 @@ public class SignUp {
     @FXML
     private Button createAccButton;
 
+    @FXML
+    private Button falconButton;
+    @FXML
+    private Button orangutanButton;
+    @FXML
+    private Button owlButton;
+    @FXML
+    private Button penguinButton;
+    @FXML
+    private Button storkButton;
+    @FXML
+    private Button zebraButton;
+
+
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+    private String imageSelected;
 
     public void createAcc(ActionEvent event) throws IOException {
         String name = nameTextField.getText();
@@ -40,6 +56,11 @@ public class SignUp {
         if (!password.equals(confirmPasswordTextField.getText())){
             Alert passwordAlert = new Alert(Alert.AlertType.ERROR);
             passwordAlert.setContentText("Your password does not match.");
+            passwordAlert.showAndWait();
+        }
+        else if (imageSelected == null) {
+            Alert passwordAlert = new Alert(Alert.AlertType.ERROR);
+            passwordAlert.setContentText("Please choose an avatar.");
             passwordAlert.showAndWait();
         }
         else if (!UserController.getINSTANCE().uniqueUsername(username)){
@@ -53,7 +74,7 @@ public class SignUp {
             passwordAlert.showAndWait();
         }
         else {
-            User newUser = UserFactory.getINSTANCE().createUser(name,username,password);
+            User newUser = UserFactory.getINSTANCE().createUser(name,username,password,imageSelected);
             UserController.getINSTANCE().addUser(newUser);
             UserController.getINSTANCE().saveUser(newUser);
 
@@ -63,6 +84,7 @@ public class SignUp {
 
             Home homeController = loader.getController();
             homeController.setUser(newUser);
+            homeController.setUp();
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -84,4 +106,65 @@ public class SignUp {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void falcon(ActionEvent event) {
+        imageSelected = "falcon";
+        falconButton.setStyle("-fx-background-color: #F1828D");
+        orangutanButton.setStyle("-fx-background-color: #FEFAD4");
+        owlButton.setStyle("-fx-background-color: #FEFAD4");
+        penguinButton.setStyle("-fx-background-color: #FEFAD4");
+        storkButton.setStyle("-fx-background-color: #FEFAD4");
+        zebraButton.setStyle("-fx-background-color: #FEFAD4");
+    }
+
+    public void orangutan(ActionEvent event) {
+        imageSelected = "orangutan";
+        falconButton.setStyle("-fx-background-color: #FEFAD4");
+        orangutanButton.setStyle("-fx-background-color: #F1828D");
+        owlButton.setStyle("-fx-background-color: #FEFAD4");
+        penguinButton.setStyle("-fx-background-color: #FEFAD4");
+        storkButton.setStyle("-fx-background-color: #FEFAD4");
+        zebraButton.setStyle("-fx-background-color: #FEFAD4");
+    }
+
+    public void owl(ActionEvent event) {
+        imageSelected = "owl";
+        falconButton.setStyle("-fx-background-color: #FEFAD4");
+        orangutanButton.setStyle("-fx-background-color: #FEFAD4");
+        owlButton.setStyle("-fx-background-color: #F1828D");
+        penguinButton.setStyle("-fx-background-color: #FEFAD4");
+        storkButton.setStyle("-fx-background-color: #FEFAD4");
+        zebraButton.setStyle("-fx-background-color:  #FEFAD4");
+    }
+
+    public void penguin(ActionEvent event) {
+        imageSelected = "penguin";
+        falconButton.setStyle("-fx-background-color: #FEFAD4");
+        orangutanButton.setStyle("-fx-background-color: #FEFAD4");
+        owlButton.setStyle("-fx-background-color: #FEFAD4");
+        penguinButton.setStyle("-fx-background-color: #F1828D");
+        storkButton.setStyle("-fx-background-color: #FEFAD4");
+        zebraButton.setStyle("-fx-background-color: #FEFAD4");
+    }
+
+    public void stork(ActionEvent event) {
+        imageSelected = "stork";
+        falconButton.setStyle("-fx-background-color: #FEFAD4");
+        orangutanButton.setStyle("-fx-background-color: #FEFAD4");
+        owlButton.setStyle("-fx-background-color: #FEFAD4");
+        penguinButton.setStyle("-fx-background-color: #FEFAD4");
+        storkButton.setStyle("-fx-background-color: #F1828D");
+        zebraButton.setStyle("-fx-background-color: #FEFAD4");
+    }
+
+    public void zebra(ActionEvent event) {
+        imageSelected = "zebra";
+        falconButton.setStyle("-fx-background-color: #FEFAD4");
+        orangutanButton.setStyle("-fx-background-color: #FEFAD4");
+        owlButton.setStyle("-fx-background-color: #FEFAD4");
+        penguinButton.setStyle("-fx-background-color: #FEFAD4");
+        storkButton.setStyle("-fx-background-color: #FEFAD4");
+        zebraButton.setStyle("-fx-background-color: #F1828D");
+    }
+
 }

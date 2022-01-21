@@ -7,8 +7,11 @@ import javafx.geometry.VPos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
@@ -41,7 +44,7 @@ public class SetDisplay {
 
         cardPane.setPrefHeight(300);
         cardPane.setPrefWidth(460);
-        cardPane.setStyle("-fx-background-color :  #34dcde");
+        cardPane.setStyle("-fx-background-color : #83DCF1");
         cardPane.setLayoutX(120);
         cardPane.setLayoutY(58);
 
@@ -70,15 +73,48 @@ public class SetDisplay {
         cardText.setText(getTerm(index));
         numOfTermsLabel.setText((index + 1) + "/" + set.getSize());
 
+        cardText.setFont(new Font("Leelawadee UI" , 18));
+        cardText.setFill(Color.web("#ffffff"));
+
+        leftButton.setStyle("-fx-background-color:  #FFE9D8");
+        leftButton.setFont(new Font("Leelawadee UI" , 22));
+        rightButton.setStyle("-fx-background-color:  #FFE9D8");
+        rightButton.setFont(new Font("Leelawadee UI" , 22));
+        numOfTermsLabel.setFont(new Font("Leelawadee UI" , 14));
+        mainAnchorPane.setStyle("-fx-background-color: #FFE9D8");
+
         cardPane.getChildren().add(cardText);
         mainAnchorPane.getChildren().add(cardPane);
         mainAnchorPane.getChildren().add(rightButton);
         mainAnchorPane.getChildren().add(leftButton);
         mainAnchorPane.getChildren().add(numOfTermsLabel);
 
+        rightButton.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                rightButton.setStyle("-fx-background-color: #F0B7A4");
+            }
+        });
+        rightButton.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                rightButton.setStyle("-fx-background-color:  #FFE9D8");
+            }
+        });
         rightButton.setOnAction(event -> rightButton());
         leftButton.setOnAction(event -> leftButton());
-
+        leftButton.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                leftButton.setStyle("-fx-background-color: #F0B7A4");
+            }
+        });
+        leftButton.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                leftButton.setStyle("-fx-background-color:  #FFE9D8");
+            }
+        });
         cardPane.setOnMouseClicked(mouseEvent -> switchCard());
     }
 

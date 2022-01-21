@@ -2,6 +2,7 @@ package com.example.glowcards.view;
 
 import com.example.glowcards.model.User;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -9,22 +10,28 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 
 public class Home {
     @FXML
-    private Button homeButton;
+    private Button homeSideButton;
     @FXML
-    private Button createButton;
+    private Button createSideButton;
     @FXML
-    private Button setsButton;
+    private Button setsSideButton;
     @FXML
-    private Button quizButton;
+    private Button quizSideButton;
 
     @FXML
     private Label nameLabel;
@@ -33,9 +40,65 @@ public class Home {
     private VBox menuVbox;
     @FXML
     private AnchorPane mainAnchorPane;
+    @FXML
+    private ImageView icon;
 
     private User user;
 
+    public void setUp() throws FileNotFoundException {
+        Image image = new Image(getClass().getResourceAsStream("/avatars/" + user.getImage()+".png"));
+        icon.setImage(image);
+
+        homeSideButton.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                homeSideButton.setStyle("-fx-background-color: #F18C8E");
+            }
+        });
+        createSideButton.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                createSideButton.setStyle("-fx-background-color: #F18C8E");
+            }
+        });
+        setsSideButton.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setsSideButton.setStyle("-fx-background-color: #F18C8E");
+            }
+        });
+        quizSideButton.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                quizSideButton.setStyle("-fx-background-color: #F18C8E");
+            }
+        });
+
+        homeSideButton.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                homeSideButton.setStyle("-fx-background-color: #FF9187");
+            }
+        });
+        createSideButton.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                createSideButton.setStyle("-fx-background-color: #FF9187");
+            }
+        });
+        setsSideButton.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                setsSideButton.setStyle("-fx-background-color: #FF9187");
+            }
+        });
+        quizSideButton.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                quizSideButton.setStyle("-fx-background-color: #FF9187");
+            }
+        });
+    }
 
     public void homeSideButton(ActionEvent event) throws IOException {
 
@@ -47,8 +110,8 @@ public class Home {
         Parent root = loader.load();
 
         Create createController = loader.getController();
-        createController.setUp();
         createController.setUser(user);
+        createController.setUp();
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

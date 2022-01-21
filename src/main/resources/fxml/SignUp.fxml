@@ -3,21 +3,23 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.glowcards.view.SignUp">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #FFE9D8;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.glowcards.view.SignUp">
    <children>
       <TextField fx:id="nameTextField" layoutX="669.0" layoutY="102.0" prefHeight="35.0" prefWidth="267.0" />
       <Label layoutX="669.0" layoutY="67.0" prefHeight="35.0" prefWidth="156.0" text="Name:">
          <font>
-            <Font size="18.0" />
+            <Font name="Leelawadee UI" size="18.0" />
          </font>
       </Label>
       <Label layoutX="669.0" layoutY="165.0" prefHeight="35.0" prefWidth="156.0" text="Username:">
          <font>
-            <Font size="18.0" />
+            <Font name="Leelawadee UI" size="18.0" />
          </font>
       </Label>
       <TextField fx:id="usernameTextField" layoutX="669.0" layoutY="200.0" prefHeight="35.0" prefWidth="267.0" />
@@ -29,22 +31,58 @@
       <TextField fx:id="passwordTextField" layoutX="669.0" layoutY="299.0" prefHeight="35.0" prefWidth="267.0" />
       <Label layoutX="669.0" layoutY="360.0" prefHeight="35.0" prefWidth="156.0" text="Confirm Password:">
          <font>
-            <Font size="18.0" />
+            <Font name="Leelawadee UI" size="18.0" />
          </font>
       </Label>
       <TextField fx:id="confirmPasswordTextField" layoutX="669.0" layoutY="396.0" prefHeight="35.0" prefWidth="267.0" />
-      <Button fx:id="createAccButton" layoutX="717.0" layoutY="491.0" mnemonicParsing="false" onAction="#createAcc" prefHeight="64.0" prefWidth="172.0" text="Create Account">
+      <Button fx:id="createAccButton" layoutX="717.0" layoutY="491.0" mnemonicParsing="false" onAction="#createAcc" prefHeight="64.0" prefWidth="172.0" style="-fx-background-color: #F1828D;" text="Create Account" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Pane layoutY="-1.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #fc6351;">
+      <Pane layoutY="-1.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #8FB9A8;">
          <children>
-            <Button fx:id="returnButton" layoutX="67.0" layoutY="500.0" mnemonicParsing="false" onAction="#returnToStart" prefHeight="64.0" prefWidth="172.0" text="Return">
+            <Button fx:id="returnButton" layoutX="67.0" layoutY="519.0" mnemonicParsing="false" onAction="#returnToStart" prefHeight="45.0" prefWidth="172.0" style="-fx-background-color: #FEFAD4;" text="←   Return">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Leelawadee UI" size="18.0" />
                </font>
             </Button>
+            <ImageView fx:id="falconImage" fitHeight="165.0" fitWidth="165.0" layoutX="14.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../avatars/falcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="orangutanImage" fitHeight="165.0" fitWidth="165.0" layoutX="218.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../avatars/orangutan.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="owlImage" fitHeight="165.0" fitWidth="165.0" layoutX="421.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../avatars/owl.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="penguinImage" fitHeight="165.0" fitWidth="165.0" layoutX="14.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../avatars/penguin.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="storkImage" fitHeight="165.0" fitWidth="165.0" layoutX="218.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../avatars/stork.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="zebraImage" fitHeight="165.0" fitWidth="165.0" layoutX="421.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../avatars/zebra.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="falconButton" layoutX="69.0" layoutY="208.0" mnemonicParsing="false" onAction="#falcon" style="-fx-background-color: #FEFAD4;" text="Choose" />
+            <Button fx:id="orangutanButton" layoutX="272.0" layoutY="208.0" mnemonicParsing="false" onAction="#orangutan" style="-fx-background-color: #FEFAD4;" text="Choose" />
+            <Button fx:id="owlButton" layoutX="476.0" layoutY="208.0" mnemonicParsing="false" onAction="#owl" style="-fx-background-color: #FEFAD4;" text="Choose" />
+            <Button fx:id="penguinButton" layoutX="69.0" layoutY="444.0" mnemonicParsing="false" onAction="#penguin" style="-fx-background-color: #FEFAD4;" text="Choose" />
+            <Button fx:id="storkButton" layoutX="273.0" layoutY="444.0" mnemonicParsing="false" onAction="#stork" style="-fx-background-color: #FEFAD4;" text="Choose" />
+            <Button fx:id="zebraButton" layoutX="476.0" layoutY="444.0" mnemonicParsing="false" onAction="#zebra" style="-fx-background-color: #FEFAD4;" text="Choose" />
          </children>
       </Pane>
    </children>
