@@ -1,4 +1,4 @@
-<h1 align="center">This is GlowCards,</h1>
+<h1 align="center">GlowCards</h1>
 <h2 align="center">A very useful study tool that can help boost your understanding and memorization of important concepts before a test!</h2>
 
 
